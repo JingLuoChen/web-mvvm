@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现Vue双向数据绑定</title>
+</head>
+<body>
+<div id="app">
+    <h2>name的值是： {{name}}</h2>
+    <h2>age的值是： {{age}}</h2>
+    <div>
+        <h2>info.c的值：{{ info.c }}</h2>
+        <h2>info.d的值：{{ info.d }}</h2>
+    </div>
+    info.c的值是：<input type="text" v-model="info.c">
+    age的值是：<input type="text" v-model="age">
+</div>
+<script src="vue.js"></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'zs',
+            age: 20,
+            info: {
+                c: '111',
+                d: '222'
+            }
+        }
+    })
+</script>
+</body>
+</html>
