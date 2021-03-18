@@ -9,7 +9,7 @@
     <h2>name的值是： {{name}}</h2>
     <h2>age的值是： {{age}}</h2>
     <div>
-        <h2>info.c的值：{{ info.c }}</h2>
+        <h2>info.c的值：{{ info.c }} {{ info.d }}</h2>
         <h2>info.d的值：{{ info.d }}</h2>
     </div>
     info.c的值是：<input type="text" v-model="info.c">
@@ -28,6 +28,35 @@
             }
         }
     })
+
+
+    var longestSubstring = function (s, k) {
+        let strLength = s.length - 1
+        getStr(s, 0, strLength, k)
+    }
+    function getStr(s, start, end, k) {
+        if (end - start + 1 < k) {
+            return 0
+        }
+        // 统计所有字符的个数
+        let map = {}
+        for(let i=start; i<end; i++) {
+            if (map[s[i]] === undefined) {
+                map[s[i]] = 1
+            } else {
+                map[s[i]]++
+            }
+        }
+
+        while (end - start + 1 >= k && map[s[start]] < k) {
+            start++
+        }
+        while (end - start + 1 >= k && map[s[start]] < k) {
+            start++
+        }
+
+
+    }
 </script>
 </body>
 </html>

@@ -101,6 +101,9 @@ function Compile(el, vm) {
                     node.textContent = textValue.replace(regMustache, newValue)
                 })
             }
+            // 终止递归的条件
+            return
+
         }
 
         // 判断是不是元素节点 和 input
